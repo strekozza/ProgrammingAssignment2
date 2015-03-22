@@ -10,8 +10,15 @@
 ## is invertible.
 
 
-## Create and return an object containing provided matrix data
+## Create and return an object of type list, 
+## containing provided matrix data
 ## and functions for setting and getting of data and inverse matrix.
+## @param x Matrix.
+## @return list with functions:
+##  set: function for setting new matrix data
+##  get: function for getting matrix data
+##  setsolve: function for setting inverse matrix
+##  getsolve: function for getting inverse matrix
 
 makeCacheMatrix <- function(x = matrix()) {
 	s <- NULL
@@ -28,10 +35,12 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Return the inverse matrix for the provided matrix.
 ## Return the cached inverse matrix if available,
 ## otherwise calculate the inverse matrix,
-## put it into the cache and return the inverse matrix.
+## put it into the cache of the provided list object
+## and return the inverse matrix.
+## @param x list.
+## @return Inverse Matrix of matrix in x.
 
 cacheSolve <- function(x, ...) {
       ## Return a matrix that is the inverse of 'x'
